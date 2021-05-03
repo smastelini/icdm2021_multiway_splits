@@ -79,7 +79,7 @@ def main(logs_folder, output_folder, table_name):
                 ################################################
                 # Defining average ranks for each algorithm ####
                 trow = agg_mean.iloc[i, :].values
-                temp = np.argsort(trow)
+                temp = np.argsort(trow) if metric != "R2" else np.argsort(-trow)
                 ranks_ = np.zeros_like(general_ranks)
                 ranks_[temp] = np.asarray(
                     [r if not np.isnan(val) else n_alg
@@ -89,7 +89,7 @@ def main(logs_folder, output_folder, table_name):
 
                 # Rankings for the synthetic datasets
                 if dataset_id in SYNTH_DATA:
-                    temp = np.argsort(trow)
+                    temp = np.argsort(trow) if metric != "R2" else np.argsort(-trow)
                     ranks_ = np.zeros_like(synth_data_ranks)
 
                     ranks_[temp] = np.asarray(
@@ -99,7 +99,7 @@ def main(logs_folder, output_folder, table_name):
                     synth_data_ranks += ranks_
                     count_synth_datasets += 1
                 else:  # Rankings for the real-world datasets
-                    temp = np.argsort(trow)
+                    temp = np.argsort(trow) if metric != "R2" else np.argsort(-trow)
                     ranks_ = np.zeros_like(real_data_ranks)
                     ranks_[temp] = np.asarray(
                         [r if not np.isnan(val) else 0
