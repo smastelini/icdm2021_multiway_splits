@@ -11,11 +11,11 @@ from river import preprocessing
 from river import stream
 from river import synth
 
-from utils import CAT_FEATURES, DATASETS, IN_PATH, MAIN_SEED, MODELS, N_REPS, OUT_PATH, SYNTH_DATA
+from utils import CAT_FEATURES, DATASETS, GENERATOR_BASED, IN_PATH, MAIN_SEED, MODELS, N_REPS, OUT_PATH
 
 
 def prepare_data(dataset_name, seed=None):
-    if dataset_name not in SYNTH_DATA or dataset_name not in ["friedman", "mv"]:
+    if dataset_name not in GENERATOR_BASED:
         header = ""
         with open(f"{IN_PATH}/{dataset_name}.csv", "r") as f:
             header = f.readline()

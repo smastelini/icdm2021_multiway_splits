@@ -35,6 +35,11 @@ SYNTH_DATA = {
     "puma32H",
 }
 
+GENERATOR_BASED = {
+    "friedman",
+    "mv",
+}
+
 CAT_FEATURES = {
     "abalone": [0],
     "airlines07_08": [1, 2, 3, 6, 9, 10, 12],
