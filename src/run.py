@@ -15,7 +15,7 @@ from utils import CAT_FEATURES, DATASETS, IN_PATH, MAIN_SEED, MODELS, N_REPS, OU
 
 
 def prepare_data(dataset_name, seed=None):
-    if dataset_name not in SYNTH_DATA:
+    if dataset_name not in SYNTH_DATA or dataset_name not in ["friedman", "mv"]:
         header = ""
         with open(f"{IN_PATH}/{dataset_name}.csv", "r") as f:
             header = f.readline()
