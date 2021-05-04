@@ -17,7 +17,7 @@ DATASETS = {
     "house_8L": "House8L",
     "house_16H": "House16H",
     "metro_interstate_traffic": "Metro",
-    #"msd_year": "MSD Year",
+    # "msd_year": "MSD Year",
     "pol": "Pol",
     "wind": "Wind",
     "winequality": "Wine",
@@ -25,7 +25,7 @@ DATASETS = {
     "friedman": "Friedman",
     "mv": "MV",
     "puma8NH": "Puma8NH",
-    "puma32H" : "Puma32H",
+    "puma32H": "Puma32H",
 }
 
 SYNTH_DATA = {
