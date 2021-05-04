@@ -45,11 +45,10 @@ def run(model_name):
     model = copy.deepcopy(MODELS[model_name])
     dataset, nominal_attributes = prepare()
 
-    model._set_params({
-        "nominal_attributes": nominal_attributes,
-        "max_size": math.inf,
-        "memory_estimate_period": math.inf
-    })
+    model.nominal_attributes = nominal_attributes
+    model.max_size = math.inf
+    model.memory_estimate_period = math.inf
+
     preproc = (
         (compose.Discard(*tuple(nominal_attributes)) | compose.SelectType(
             numbers.Number) | preprocessing.StandardScaler()) + compose.Select(
@@ -110,4 +109,3 @@ if __name__ == "__main__":
     model_name = sys.argv[1]
 
     run(model_name)
-
