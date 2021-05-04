@@ -97,7 +97,7 @@ def run_dataset(dataset_name):
         print()
 
         pd.DataFrame.from_dict(summaries, orient="index").to_csv(
-            f"{OUT_PATH}/stats_{dataset_name}_{model_name}.txt"
+            f"{OUT_PATH}/stats_{dataset_name}_{model_name}.csv"
         )
 
 
