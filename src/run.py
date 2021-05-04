@@ -1,4 +1,5 @@
 import copy
+import math
 import numbers
 import random
 
@@ -66,7 +67,7 @@ def run_dataset(dataset_name):
             model = copy.deepcopy(template_model)
 
             if dataset_name in CAT_FEATURES:
-                model._set_params({"nominal_attributes": CAT_FEATURES[dataset_name]})
+                model.nominal_attributes = nominal_attributes
                 preproc = (
                     (compose.Discard(*tuple(nominal_attributes)) | compose.SelectType(
                         numbers.Number) | preprocessing.StandardScaler()) + compose.Select(
@@ -78,6 +79,10 @@ def run_dataset(dataset_name):
                         compose.SelectType(numbers.Number) | preprocessing.StandardScaler()
                     ) + compose.SelectType(str)
                 )
+            # Ensure the memory management routines do not take place
+            model.max_size = math.inf
+            model.memory_estimate_period = math.inf
+            # Assemble the final model
             model = preproc | model
 
             evaluate.progressive_val_score(
