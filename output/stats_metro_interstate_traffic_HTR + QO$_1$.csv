@@ -1,0 +1,6 @@
+,n_nodes,n_branches,n_leaves,n_active_leaves,n_inactive_leaves,height,total_observed_weight
+0,126,51,75,75,0,31,48204.0
+1,94,33,61,61,0,12,48204.0
+2,93,31,62,62,0,12,48204.0
+3,77,25,52,52,0,11,48204.0
+4,76,34,42,42,0,16,48204.0
