@@ -1,11 +1,14 @@
+from river import linear_model
+from river import neighbors
 from river import tree
 
 
 IN_PATH = "../datasets"
-OUT_PATH = "../output_h5"
+OUT_PATH = "../output"
 
 MAIN_SEED = 42
 INCLUDE_STD_IN_TABLES = True
+INCLUDE_BASELINES_IN_TABLES = False
 
 DATASETS = {
     "abalone": "Abalone",
@@ -91,3 +94,13 @@ MODELS = {
         splitter=tree.splitter.QOSplitter(radius=1, allow_multiway_splits=True)
     ),
 }
+
+
+BASELINES = {
+    "LR": linear_model.LinearRegression(),
+    "PAR": linear_model.PARegressor(),
+    "k-NN": neighbors.KNNRegressor()
+}
+
+if INCLUDE_BASELINES_IN_TABLES:
+    MODELS.update(BASELINES)
