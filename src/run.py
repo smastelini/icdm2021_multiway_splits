@@ -82,6 +82,10 @@ def run_dataset(dataset_name):
             # Ensure the memory management routines do not take place
             model.max_size = math.inf
             model.memory_estimate_period = math.inf
+
+            # Set the maximum depth
+            model.max_depth = 5
+
             # Assemble the final model
             model = preproc | model
 

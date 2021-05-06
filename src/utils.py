@@ -2,7 +2,7 @@ from river import tree
 
 
 IN_PATH = "../datasets"
-OUT_PATH = "../output"
+OUT_PATH = "../output_h5"
 
 MAIN_SEED = 42
 INCLUDE_STD_IN_TABLES = True
