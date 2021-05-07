@@ -99,10 +99,10 @@ MODELS = {
 
 
 BASELINES = {
-    "LR": linear_model.LinearRegression(),
-    "PAR": linear_model.PARegressor(),
+    "LR": linear_model.LinearRegression(l2=0.0001),
+    #"PAR": linear_model.PARegressor(),
     # #"k-NN": neighbors.KNNRegressor(),
-    "Dummy": dummy.StatisticRegressor(stats.Mean())
+    #"Dummy": dummy.StatisticRegressor(stats.Mean())
 }
 
 if INCLUDE_BASELINES_IN_TABLES:
