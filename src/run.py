@@ -84,7 +84,7 @@ def run_dataset(dataset_name):
             model.memory_estimate_period = math.inf
 
             # Set the maximum depth
-            model.max_depth = 5
+            # model.max_depth = 3
 
             # Assemble the final model
             model = preproc | model

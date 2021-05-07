@@ -99,7 +99,7 @@ MODELS = {
 BASELINES = {
     "LR": linear_model.LinearRegression(),
     "PAR": linear_model.PARegressor(),
-    "k-NN": neighbors.KNNRegressor()
+    #"k-NN": neighbors.KNNRegressor()
 }
 
 if INCLUDE_BASELINES_IN_TABLES:
