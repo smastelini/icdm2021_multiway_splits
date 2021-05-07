@@ -1,5 +1,7 @@
+from river import dummy
 from river import linear_model
 from river import neighbors
+from river import stats
 from river import tree
 
 
@@ -99,7 +101,8 @@ MODELS = {
 BASELINES = {
     "LR": linear_model.LinearRegression(),
     "PAR": linear_model.PARegressor(),
-    #"k-NN": neighbors.KNNRegressor()
+    # #"k-NN": neighbors.KNNRegressor(),
+    "Dummy": dummy.StatisticRegressor(stats.Mean())
 }
 
 if INCLUDE_BASELINES_IN_TABLES:
