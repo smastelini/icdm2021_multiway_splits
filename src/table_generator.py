@@ -53,7 +53,7 @@ def main(logs_folder, output_folder, table_name):
             # Preamble portion
             f.write('\\begin{table*}[!htbp]\n')
             f.write(f'\t\\caption{{{metricp} results}}\n')
-            f.write('\t\\label{{tab_{metric}}}\n')
+            f.write(f'\t\\label{{tab_{metric}}}\n')
             f.write('\t\\centering\n')
             f.write('\t\\setlength{\\tabcolsep}{3pt}\n')
             f.write('\t\\resizebox{\\textwidth}{!}{\n')
