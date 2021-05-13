@@ -56,41 +56,41 @@ N_REPS = 5
 
 
 MODELS = {
-    # "HTR + E-BST": tree.HoeffdingTreeRegressor(
-    #     leaf_prediction="mean"
-    # ),
-    # "HTR + TE-BST": tree.HoeffdingTreeRegressor(
-    #     leaf_prediction="mean",
-    #     splitter=tree.splitter.TEBSTSplitter(digits=2),
-    # ),
-    "HTR + QO$_{0.1}$": tree.HoeffdingTreeRegressor(
-        leaf_prediction="mean",
-        splitter=tree.splitter.QOSplitter(radius=0.1)
+    "HTR + E-BST": tree.HoeffdingTreeRegressor(
+        leaf_prediction="mean"
     ),
+    "HTR + TE-BST": tree.HoeffdingTreeRegressor(
+        leaf_prediction="mean",
+        splitter=tree.splitter.TEBSTSplitter(digits=2),
+    ),
+    # "HTR + QO$_{0.1}$": tree.HoeffdingTreeRegressor(
+    #     leaf_prediction="mean",
+    #     splitter=tree.splitter.QOSplitter(radius=0.1)
+    # ),
     "HTR + QO$_{0.25}$": tree.HoeffdingTreeRegressor(
         leaf_prediction="mean",
         splitter=tree.splitter.QOSplitter(radius=0.25)
     ),
-    "HTR + QO$_{0.5}$": tree.HoeffdingTreeRegressor(
-        leaf_prediction="mean",
-        splitter=tree.splitter.QOSplitter(radius=0.5)
-    ),
-    "HTR + QO$_1$": tree.HoeffdingTreeRegressor(
-        leaf_prediction="mean",
-        splitter=tree.splitter.QOSplitter(radius=1)
-    ),
-    "HTR + QO$_{0.1} + M$": tree.HoeffdingTreeRegressor(
-        leaf_prediction="mean",
-        splitter=tree.splitter.QOSplitter(radius=0.1, allow_multiway_splits=True)
-    ),
-    "HTR + QO$_{0.25} + M$": tree.HoeffdingTreeRegressor(
-        leaf_prediction="mean",
-        splitter=tree.splitter.QOSplitter(radius=0.25, allow_multiway_splits=True)
-    ),
-    "HTR + QO$_{0.5} + M$": tree.HoeffdingTreeRegressor(
-        leaf_prediction="mean",
-        splitter=tree.splitter.QOSplitter(radius=0.5, allow_multiway_splits=True)
-    ),
+    # "HTR + QO$_{0.5}$": tree.HoeffdingTreeRegressor(
+    #     leaf_prediction="mean",
+    #     splitter=tree.splitter.QOSplitter(radius=0.5)
+    # ),
+    # "HTR + QO$_1$": tree.HoeffdingTreeRegressor(
+    #     leaf_prediction="mean",
+    #     splitter=tree.splitter.QOSplitter(radius=1)
+    # ),
+    # "HTR + QO$_{0.1} + M$": tree.HoeffdingTreeRegressor(
+    #     leaf_prediction="mean",
+    #     splitter=tree.splitter.QOSplitter(radius=0.1, allow_multiway_splits=True)
+    # ),
+    # "HTR + QO$_{0.25} + M$": tree.HoeffdingTreeRegressor(
+    #     leaf_prediction="mean",
+    #     splitter=tree.splitter.QOSplitter(radius=0.25, allow_multiway_splits=True)
+    # ),
+    # "HTR + QO$_{0.5} + M$": tree.HoeffdingTreeRegressor(
+    #     leaf_prediction="mean",
+    #     splitter=tree.splitter.QOSplitter(radius=0.5, allow_multiway_splits=True)
+    # ),
     "HTR + QO$_{1} + M$": tree.HoeffdingTreeRegressor(
         leaf_prediction="mean",
         splitter=tree.splitter.QOSplitter(radius=1, allow_multiway_splits=True)
