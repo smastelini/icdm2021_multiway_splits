@@ -1,6 +1,6 @@
 from river import dummy
 from river import linear_model
-from river import neighbors
+# from river import neighbors
 from river import stats
 from river import tree
 
@@ -56,13 +56,13 @@ N_REPS = 5
 
 
 MODELS = {
-    "HTR + E-BST": tree.HoeffdingTreeRegressor(
-        leaf_prediction="mean"
-    ),
-    "HTR + TE-BST": tree.HoeffdingTreeRegressor(
-        leaf_prediction="mean",
-        splitter=tree.splitter.TEBSTSplitter(digits=2),
-    ),
+    # "HTR + E-BST": tree.HoeffdingTreeRegressor(
+    #     leaf_prediction="mean"
+    # ),
+    # "HTR + TE-BST": tree.HoeffdingTreeRegressor(
+    #     leaf_prediction="mean",
+    #     splitter=tree.splitter.TEBSTSplitter(digits=2),
+    # ),
     "HTR + QO$_{0.1}$": tree.HoeffdingTreeRegressor(
         leaf_prediction="mean",
         splitter=tree.splitter.QOSplitter(radius=0.1)
@@ -99,11 +99,12 @@ MODELS = {
 
 
 BASELINES = {
-    "LR": linear_model.LinearRegression(l2=0.0001),
-    #"PAR": linear_model.PARegressor(),
+    # "LR": linear_model.LinearRegression(l2=0.0001),
+    "PAR": linear_model.PARegressor(),
     # #"k-NN": neighbors.KNNRegressor(),
-    #"Dummy": dummy.StatisticRegressor(stats.Mean())
+    "Dummy": dummy.StatisticRegressor(stats.Mean())
 }
 
 if INCLUDE_BASELINES_IN_TABLES:
-    MODELS.update(BASELINES)
+    BASELINES.update(MODELS)
+    MODELS = BASELINES
