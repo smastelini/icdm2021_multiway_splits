@@ -15,6 +15,13 @@ metric_prettyfier = {
     "time": "Time (s)"
 }
 
+model_prettyfier = {
+    "HTR + QO$_{0.1} + M$": "HTR + QO$_{0.1}^M$",
+    "HTR + QO$_{0.25} + M$": "HTR + QO$_{0.25}^M$",
+    "HTR + QO$_{0.5} + M$": "HTR + QO$_{0.5}^M$",
+    "HTR + QO$_{1} + M$": "HTR + QO$_{1}^M$",
+}
+
 raw_results = {
     metric: pd.DataFrame(
         np.zeros((len(DATASETS), len(MODELS))),
@@ -33,7 +40,7 @@ proc_results = pd.DataFrame(
     columns=list(metric_prettyfier.values())
 )
 
-proc_results["variant"] = list(MODELS.keys())
+proc_results["variant"] = [model_prettyfier.get(name, name) for name in MODELS.keys()]
 
 for metric, metricp in metric_prettyfier.items():
     for i in range(len(raw_results[metric])):
