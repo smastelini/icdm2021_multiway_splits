@@ -9,7 +9,7 @@ OUT_PATH = "../output"
 
 MAIN_SEED = 42
 INCLUDE_STD_IN_TABLES = True
-INCLUDE_BASELINES_IN_TABLES = False
+INCLUDE_BASELINES_IN_TABLES = True
 
 DATASETS = {
     "abalone": "Abalone",
@@ -99,7 +99,8 @@ MODELS = {
 
 BASELINES = {
     "PAR": linear_model.PARegressor(),
-    "Dummy": dummy.StatisticRegressor(stats.Mean())
+    "Dummy": dummy.StatisticRegressor(stats.Mean()),
+    "AMRules + QO$_{0.25}$": None  # Just to gather results
 }
 
 if INCLUDE_BASELINES_IN_TABLES:
