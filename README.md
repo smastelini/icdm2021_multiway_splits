@@ -20,7 +20,7 @@ Only [River](https://www.riverml.xyz) (the latest/development version is the pre
 ## Folder organization
 
 - `output`: Contains all the obtained (raw) logs, charts, and tables
-    * `airlines_study_case` - The study case results
+    * `airlines_case_study` - The case study results
     * `charts` - biplot charts
     * `final` - aggregated logs (mean and std) and tree stats
     * `nemenyi` - input data to the nemenyi tests
@@ -40,7 +40,7 @@ To run the baselines:
 
 `python run_baselines.py`
 
-The airlines study case can be reproduced by using (note that a subset of the trees was used in this case):
+The airlines case study can be reproduced by using (note that a subset of the trees was used in this case):
 
 `python run_airlines.py`
 
@@ -61,4 +61,4 @@ Moreover, some additional scripts:
 - `data_info_table.py`: used to generate a table with the datasets' characteristics
 - `biplot_generator.py`: generates the biplot used in the paper
 - `generate_nemenyi_data.py`: assembles the inputs for the Friedman and Nemenyi tests
-- `study_case_plot.ipynb`: generates the charts concerning the airlines study case
+- `case_study_plot.ipynb`: generates the charts concerning the airlines case study

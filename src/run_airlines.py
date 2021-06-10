@@ -16,8 +16,8 @@ from utils import CAT_FEATURES, IN_PATH, MODELS, OUT_PATH
 
 CHECK_EVERY = 1000
 
-if not os.path.exists(f"{OUT_PATH}/airlines_study_case"):
-    os.makedirs(f"{OUT_PATH}/airlines_study_case")
+if not os.path.exists(f"{OUT_PATH}/airlines_case_study"):
+    os.makedirs(f"{OUT_PATH}/airlines_case_study")
 
 
 def prepare():
@@ -99,7 +99,7 @@ def run(model_name):
             pd.DataFrame.from_dict(
                 log, orient="index"
             ).to_csv(
-                f"{OUT_PATH}/airlines_study_case/{model_name}.csv"
+                f"{OUT_PATH}/airlines_case_study/{model_name}.csv"
             )
 
             index += 1
