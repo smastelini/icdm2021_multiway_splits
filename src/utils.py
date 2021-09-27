@@ -100,7 +100,6 @@ MODELS = {
 BASELINES = {
     "PAR": linear_model.PARegressor(),
     "Dummy": dummy.StatisticRegressor(stats.Mean()),
-    "AMRules + QO$_{0.25}$": None  # Just to gather results
 }
 
 if INCLUDE_BASELINES_IN_TABLES:
